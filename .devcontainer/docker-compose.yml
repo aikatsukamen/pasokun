@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  pasokun:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    working_dir: '/workspace'
+    tty: true
+    volumes:
+      - type: bind
+        source: ../
+        target: /workspace
+    environment:
+      - CHANNEL_LIST=@aikatsu-academy,@himeno-mieru,@mamimu-meh,@wao-parin
+      - WORKER_NUM=1

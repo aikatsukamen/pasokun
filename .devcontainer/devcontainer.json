@@ -1,0 +1,27 @@
+{
+  "name": "docker - node",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "pasokun",
+  "workspaceFolder": "/workspace",
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "ms-azuretools.vscode-docker",
+        "yy0931.vscode-sqlite3-editor"
+      ]
+    }
+  },
+  // node_modulesをボリューム内のみに保存
+  "mounts": [
+    "source=try-node-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=try-node-data,target=${containerWorkspaceFolder}/data,type=volume"
+  ],
+  "postCreateCommand": "/bin/bash ./.devcontainer/postCreateCommand.sh",
+  "remoteUser": "vscode"
+}

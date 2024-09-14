@@ -1,0 +1,38 @@
+{
+  "name": "pasokun",
+  "version": "1.0",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "ts-node --files src/js/index.ts",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs 'src/**/*.{js,jsx,ts,tsx}'",
+    "build": "tsup",
+    "docker:build": "docker build . -t aikatsukamen/pasokun:latest"
+  },
+  "engines": {
+    "node": ">=21.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.10.0",
+    "@types/node": "^20.16.5",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.2.4",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.5.0"
+  },
+  "dependencies": {
+    "puppeteer": "^23.3.0",
+    "sqlite3": "^5.1.7",
+    "tslib": "^2.7.0",
+    "whisper-node": "^1.1.1"
+  }
+}
